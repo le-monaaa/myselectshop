@@ -8,6 +8,7 @@ import com.sparta.myselectshop.service.ProductService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.data.domain.Page;
 import org.springframework.security.core.annotation.AuthenticationPrincipal;
+import org.springframework.transaction.annotation.Transactional;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -29,6 +30,7 @@ public class ProductController {
 
         return productService.updateProduct(id, requestDto);
     }
+
 
     @GetMapping("/products")
     public Page<ProductResponseDto> getProducts(
